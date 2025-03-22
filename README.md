@@ -1,31 +1,35 @@
-# Job Portal Backend
+# 🚀 Job Portal Backend
 
-This is the backend for the Job Portal application, built using Node.js, Express, MongoDB, and AWS S3 for resume storage.
+This is the backend for the **Job Portal** application, built using **Node.js, Express, MongoDB**, and **AWS S3** for resume storage.
 
-## Setup Instructions
+---
 
-### Prerequisites
-- Node.js (v18 or later)
-- MongoDB (Atlas or local instance)
-- AWS S3 bucket for resume storage
+## 📌 Setup Instructions
 
-### Installation
-1. Clone the repository:
+### ✅ Prerequisites
+- **Node.js** (v18 or later)
+- **MongoDB** (Atlas or local instance)
+- **AWS S3** bucket for resume storage
+
+### 📥 Installation
+1. **Clone the repository:**
    ```bash
    git clone https://github.com/SakshamChouhan/job-portal-backend.git
    cd job-portal-backend
    ```
-2. Install dependencies:
+2. **Install dependencies:**
    ```bash
    npm install
    ```
-3. Create a `.env` file and configure the environment variables (see below).
-4. Start the server:
+3. **Create a `.env` file** and configure the environment variables (see below).
+4. **Start the server:**
    ```bash
    npm start
    ```
 
-## Environment Variables
+---
+
+## 🔑 Environment Variables
 Create a `.env` file in the root directory and add the following:
 
 ```env
@@ -38,20 +42,24 @@ AWS_REGION=your-aws-region
 AWS_S3_BUCKET=your-s3-bucket-name
 ```
 
-## API Endpoints
+---
 
-| Method | Endpoint          | Description |
-|--------|------------------|-------------|
-| POST   | `/api/auth/register` | Register a new user |
-| POST   | `/api/auth/login` | Login and receive a token |
-| GET    | `/api/profile` | Fetch user profile (name, email, resume from S3) (Requires Token) |
-| GET    | `/api/skills` | Fetch user skills stored in MongoDB (Requires Token) |
-| POST   | `/api/resume/upload` | Upload resume, extract skills, and save to DB (Requires Token) |
-| GET    | `/api/jobs` | Fetch job recommendations (Requires Token) |
+## 📡 API Endpoints
 
-## Example API Requests
+| Method | Endpoint | Description |
+|--------|--------------------------------|--------------------------------------------|
+| **POST** | `/api/auth/register` | Register a new user |
+| **POST** | `/api/auth/login` | Login and receive a token |
+| **GET**  | `/api/profile` | Fetch user profile (name, email, resume from S3) *(Requires Token)* |
+| **GET**  | `/api/skills` | Fetch user skills stored in MongoDB *(Requires Token)* |
+| **POST** | `/api/resume/upload` | Upload resume, extract skills, and save to DB *(Requires Token)* |
+| **GET**  | `/api/jobs` | Fetch job recommendations *(Requires Token)* |
 
-### Register a new user
+---
+
+## 🎯 Example API Requests
+
+### 📝 Register a new user
 ```sh
 curl -X POST http://localhost:5000/api/auth/register \
      -H "Content-Type: application/json" \
@@ -63,7 +71,7 @@ curl -X POST http://localhost:5000/api/auth/register \
      }'
 ```
 
-### Login
+### 🔐 Login
 ```sh
 curl -X POST http://localhost:5000/api/auth/login \
      -H "Content-Type: application/json" \
@@ -73,19 +81,19 @@ curl -X POST http://localhost:5000/api/auth/login \
      }'
 ```
 
-### Fetch user profile
+### 👤 Fetch user profile
 ```sh
 curl -X GET http://localhost:5000/api/profile \
      -H "Authorization: Bearer <your-token>"
 ```
 
-### Fetch user skills
+### 📌 Fetch user skills
 ```sh
 curl -X GET http://localhost:5000/api/skills \
      -H "Authorization: Bearer <your-token>"
 ```
 
-### Upload resume
+### 📂 Upload resume
 ```sh
 curl -X POST http://localhost:5000/api/resume/upload \
      -H "Authorization: Bearer <your-token>" \
@@ -93,17 +101,21 @@ curl -X POST http://localhost:5000/api/resume/upload \
      -F "resume=@Resume.pdf"
 ```
 
-### Fetch job recommendations
+### 💼 Fetch job recommendations
 ```sh
 curl -X GET http://localhost:5000/api/jobs \
      -H "Authorization: Bearer <your-token>"
 ```
 
-## Authentication
-- After login, a token is returned.
-- The token must be included in the `Authorization` header as `Bearer <token>` for protected routes.
+---
 
-## Running the Server
+## 🔑 Authentication
+- After login, a **JWT token** is returned.
+- The token must be included in the `Authorization` header as `Bearer <token>` for **protected routes**.
+
+---
+
+## ▶️ Running the Server
 Start the backend server using:
 ```bash
 npm start
@@ -114,12 +126,15 @@ For development, use:
 npm run dev
 ```
 
-## Technologies Used
-- **Node.js** with Express.js
+---
+
+## 🛠️ Technologies Used
+- **Node.js** with **Express.js**
 - **MongoDB** for database
 - **AWS S3** for resume storage
 - **JWT** for authentication
 
 ---
-This backend powers the Job Portal, handling user authentication, resume processing, skill extraction, and job recommendations.
+
+🚀 This backend powers the **Job Portal**, handling **user authentication, resume processing, skill extraction, and job recommendations** efficiently! 🎯
 
